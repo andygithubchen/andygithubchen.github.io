@@ -15,8 +15,8 @@ tbody, tfoot, thead, tr, th, td, input {
   outline: 0;
   font-weight: inherit;
   font-style: inherit;
-  font-family:XHei;
-  font-size: 14px;
+  font-family:Verdana, Arial, Helvetica, sans-serif;;
+  font-size: 12px;
   vertical-align: baseline;
   list-style:none;
 }
