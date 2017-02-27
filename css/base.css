@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors Andy Chen (bootoo@sina.cn)
+ * @date    2014-08-10 14:35:13
+ * @version $Id$
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike,
+strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family:XHei;
+  font-size: 14px;
+  vertical-align: baseline;
+  list-style:none;
+}
+a{
+	text-decoration:none;
+	color:#ccc;
+}
+.fl{
+  float:left;
+}
+.fr{
+  float:right;
+}
+#header{
+	background:#000;
+	padding:10px;
+	color:#fff;
+	font-size30px;
+	opacity:0.6;
+  overflow:hidden;
+}
+.container{ width:1000px; margin:0px auto;}
+
+#footer{
+	background:#000;
+	height:30px;
+	opacity:0.6;
+	text-align:right;
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:100%;
+}
+#footer p{
+	line-height:30px;
+}
+
+
+.bd{
+	border:1px solid #f00;
+}
