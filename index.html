@@ -271,12 +271,13 @@ div{
   <script src="./js/jquery-1.8.3.min.js"></script>
   <script src="./js/clipboard.min.js"></script>
   <script type="text/javascript">
-    // $.getJSON('http://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8',function(json){
-    //   var img = json['images'][0]['url'];
-    //   $('body').attr('background',img);
-    // })
+     $.getJSON('http://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8',function(json){
+       var img = json['images'][0]['url'];
+       console.log(img);
+       $('body').attr('background',img);
+     })
 
-    document.getElementById('lst-ib').focus();
+    //document.getElementById('lst-ib').focus();
 
     $(function(){
       $('#type input').on('click', function(){
