@@ -328,7 +328,7 @@ div{
     getPhpError();
     function getPhpError(){
       var title_old = document.title;
-      var ws = new WebSocket("ws://192.168.0.104:1010");
+      var ws = new WebSocket("wss://192.168.0.104:1010");
       ws.onopen = function(evt) {
         console.log("Connection open ...");
         //ws.send("MAC Hello WebSockets!");
