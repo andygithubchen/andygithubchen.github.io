@@ -355,6 +355,9 @@ div{
       var title_old = document.title;
       var evt = '{"Warning":28,"error":18,"Standards":186,"Notice":124,"unkown":29}';
       var emoji = '{"Warning":🍎,"error":🍎,"Standards":🍏,"Notice":🍐,"unkown":🍎}';
+      $.getJSON('./js/emojis.json', function(emoji){
+        console.log(emoji);
+      });
         var msg = JSON.parse(evt);
         console.log(msg);
         console.log(msg.Warning);
