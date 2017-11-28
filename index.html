@@ -5,9 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/base.css"/>
     <title>我的主页</title>
-    <link href="http://cdn.staticfile.org/emoji/0.2.2/emoji.css" rel="stylesheet" type="text/css" />
-    <script src="http://cdn.staticfile.org/jquery/2.1.0/jquery.min.js"></script>
-    <script src="http://cdn.staticfile.org/emoji/0.2.2/emoji.js"></script>
   </head>
   <style>
 <!--
@@ -354,16 +351,21 @@ div{
       var head = 1;
       var title_old = document.title;
       var evt = '{"Warning":28,"error":18,"Standards":186,"Notice":124,"unkown":29}';
-      var emoji = '{"Warning":🍎,"error":🍎,"Standards":🍏,"Notice":🍐,"unkown":🍎}';
-      $.getJSON('./js/emojis.json', function(emoji){
+      var type2emoji = JSON.parse('{"Warning":"100","error":"100","Standards":"100","Notice":"100","unkown":"100"}');
+      console.log(type2emoji);
+      $.getJSON('https://andygithubchen.github.io/js/emojis.json', function(emoji){
         console.log(emoji);
+        Object.keys(type2emoji).forEach(function(key){
+          type2emoji[key] = emoji[type2emoji[key]]['char'];
+        })
+        console.log(type2emoji);
       });
         var msg = JSON.parse(evt);
         console.log(msg);
         console.log(msg.Warning);
         setInterval(function(){
           if(head == 1){
-            document.title = msg.Warning;
+            document.title = type2emoji.Warning;
             head = 2;
           } else{
             document.title = title_old;
