@@ -325,7 +325,7 @@ div{
       });
     }
 
-    //getPhpError();
+    getPhpError();
     function getPhpError(){
       var title_old = document.title;
       var ws = new WebSocket("ws://192.168.0.104:1010");
@@ -336,9 +336,7 @@ div{
       ws.onmessage = function(evt) {
         console.log( "Received Message: " + evt.data);
         var msg = JSON.parse(evt.data);
-        console.log(msg);
-        console.log(msg.Warning);
-        document.title = msg.Warning;
+        _dataTreat(msg);
         //ws.close();
       };
       ws.onclose = function(evt) {
@@ -346,32 +344,28 @@ div{
       };
     }
 
-    _dev();
-    function _dev(){
+    function _dataTreat(msg){
       var head = 1;
+      var title = '';
       var title_old = document.title;
-      var evt = '{"Warning":28,"error":18,"Standards":186,"Notice":124,"unkown":29}';
-      var type2emoji = JSON.parse('{"Warning":"100","error":"100","Standards":"100","Notice":"100","unkown":"100"}');
-      console.log(type2emoji);
-      $.getJSON('https://andygithubchen.github.io/js/emojis.json', function(emoji){
-        console.log(emoji);
-        Object.keys(type2emoji).forEach(function(key){
-          type2emoji[key] = emoji[type2emoji[key]]['char'];
-        })
-        console.log(type2emoji);
-      });
-        var msg = JSON.parse(evt);
-        console.log(msg);
-        console.log(msg.Warning);
-        setInterval(function(){
-          if(head == 1){
-            document.title = type2emoji.Warning;
-            head = 2;
-          } else{
-            document.title = title_old;
-            head = 1;
-          }
-        }, 1000);
+      var isApple = navigator.platform.indexOf("Mac") == 0;
+      var apple = JSON.parse('{"Warning":"🌶","error":"🔥","Standards":"🍎","Notice":"🌥","unkown":"⁉️ "}');
+      Object.keys(msg).forEach(function(key){
+        if(isApple)
+          title += apple[key]+msg[key]+', ';
+        else
+          title += key+'*'+msg[key]+',';
+      })
+      console.log(title);
+      setInterval(function(){
+        if(head == 1){
+          document.title = title;
+          head = 2;
+        } else{
+          document.title = title_old;
+          head = 1;
+        }
+      }, 1000);
     }
   </script>
 </body>
