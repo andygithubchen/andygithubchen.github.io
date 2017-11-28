@@ -5,6 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/base.css"/>
     <title>我的主页</title>
+    <link href="http://cdn.staticfile.org/emoji/0.2.2/emoji.css" rel="stylesheet" type="text/css" />
+    <script src="http://cdn.staticfile.org/jquery/2.1.0/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/emoji/0.2.2/emoji.js"></script>
   </head>
   <style>
 <!--
@@ -274,11 +277,11 @@ div{
   <script src="./js/jquery-1.8.3.min.js"></script>
   <script src="./js/clipboard.min.js"></script>
   <script type="text/javascript">
-     $.getJSON('http://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8',function(json){
-       var img = json['images'][0]['url'];
-       console.log(img);
-       $('body').attr('background',img);
-     })
+     //$.getJSON('http://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8',function(json){
+     //  var img = json['images'][0]['url'];
+     //  console.log(img);
+     //  $('body').attr('background',img);
+     //})
 
     //document.getElementById('lst-ib').focus();
 
@@ -323,6 +326,47 @@ div{
       clipboard.on('error', function(e) {
         console.log(e);
       });
+    }
+
+    //getPhpError();
+    function getPhpError(){
+      var title_old = document.title;
+      var ws = new WebSocket("ws://192.168.0.104:1010");
+      ws.onopen = function(evt) {
+        console.log("Connection open ...");
+        //ws.send("MAC Hello WebSockets!");
+      };
+      ws.onmessage = function(evt) {
+        console.log( "Received Message: " + evt.data);
+        var msg = JSON.parse(evt.data);
+        console.log(msg);
+        console.log(msg.Warning);
+        document.title = msg.Warning;
+        //ws.close();
+      };
+      ws.onclose = function(evt) {
+        console.log("Connection closed.");
+      };
+    }
+
+    _dev();
+    function _dev(){
+      var head = 1;
+      var title_old = document.title;
+      var evt = '{"Warning":28,"error":18,"Standards":186,"Notice":124,"unkown":29}';
+      var emoji = '{"Warning":🍎,"error":🍎,"Standards":🍏,"Notice":🍐,"unkown":🍎}';
+        var msg = JSON.parse(evt);
+        console.log(msg);
+        console.log(msg.Warning);
+        setInterval(function(){
+          if(head == 1){
+            document.title = msg.Warning;
+            head = 2;
+          } else{
+            document.title = title_old;
+            head = 1;
+          }
+        }, 1000);
     }
   </script>
 </body>
