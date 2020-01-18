@@ -8,154 +8,82 @@
   </head>
   <style>
 <!--
+html,body,a{
+  color:#b3b3b3;
+}
 div{
   overflow:hidden;
 }
 .page_home{
-  background-size:100%;
-}
-
-#content{
-  background:#000;
-  opacity:0.6;
-  margin:5px auto;
-  padding:0px 20px;
-  width:960px;
-}
-.hd{
-  display:none;
+  background-color:#323639;
 }
 .list{
   color:#ccc;
   overflow:hidden;
-  border-bottom:1px solid #333333;
- }
- .list .item{
-   width:80px;
-   height:88px;
-   line-height:88px;
-   border-right:1px solid #1C1C1C;
-   padding:0px 20px 0px 0px;
-   text-align:justify;
-   text-justify:distribute-all-lines;/*ie6-8*/
-   text-align-last:justify;/* ie9*/
-   -moz-text-align-last:justify;/*ff*/
-   -webkit-text-align-last:justify;/*chrome 20+*/
- }
- @media screen and (-webkit-min-device-pixel-ratio:0){
-   .item:after{
-     content:".";
-     display: inline-block;
-     width:100%;
-     overflow:hidden;
-     height:0;
-   }
- }
-
-.list .item-list{
-   padding:10px;
- }
-.list .item-list p{
-	overflow:hidden;
+  border-bottom:1px solid #2A2D2D;
+}
+.list .item{
+  width:80px;
+  height:88px;
+  line-height:88px;
+  border-right:1px solid #1C1C1C;
+  padding:0px 20px 0px 0px;
+  text-align:justify;
+  text-justify:distribute-all-lines;/*ie6-8*/
+  text-align-last:justify;/* ie9*/
+  -moz-text-align-last:justify;/*ff*/
+  -webkit-text-align-last:justify;/*chrome 20+*/
 }
 
+.list .item-list{
+  padding:10px;
+}
+.list .item-list p{
+  overflow:hidden;
+}
 
+.list a{
+  text-decoration:none;
+  padding:10px;
+  display:block;
+  float:left;
 
- .list a{
-   text-decoration:none;
-   color:#ccc;
-   padding:10px;
-   display:block;
-   float:left;
+}
 
- }
-
- .list a:hover{
-   background:#f00;
-   color:#fff;
- }
- .bulid-key,
- .key{
-   width:300px;
-   padding:3px 5px;
-   opacity:1.0;
-   background:#fff;
-   font-size:16px;
-   border-radius:2px 0px 0px 2px;
- }
- .bulid-key{
-   border-radius:0px;
-   width:150px;
- }
- .bulid,
- .sb{
-   padding:0px 10px;
-   text-align:center;
-   width:100px;
-   cursor:pointer;
-   margin-left:-7px;
-   vertical-align:top;
-   height:25px;
-   line-height:25px;
-   border-radius:0px 2px 2px 0px;
- }
- .bulid{
-   width:60px;
- }
- form {
-   margin-bottom:10px;
- }
- .urls{
-   color:#FFF;
- }
- .urls li{
-   margin:10px 0px;
-   border:1px solid #333;
-   padding:6px;
-   color:#2DBD90;
-   background:#333;
-   cursor:pointer;
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
- }
- .urls li:hover{
-   color:#FFF;
- }
- .make-box{
-   width:500px;
- }
- .url-type input{
-   padding:0px 10px;
-   text-align:center;
-   width:50px;
-   cursor:pointer;
-   margin-right-8px;
-   vertical-align:top;
-   height:25px;
-   line-height:25px;
-   float:right;
-   border-right:1px solid #999;
- }
- .url-type input.on{
-   background:#999;
- }
- .url-type input:first-child{
-   border:none;
- }
- .url-type input:last-child{
-   border-radius:2px 0px 0px 2px;
- }
- -->
+.list a.on,
+.list a:hover{
+  background:#a73c3c;
+  color:#fff;
+  border-radius:25px;
+}
+.logo{
+  font-size:30px;
+  color:#DF6F5D;
+  font-weight:bold;
+}
+.imgs{
+  width:100%;
+  position:fixed;
+  bottom:0;
+  right:0;
+  overflow:hidden;
+  padding:5px;
+  z-index:-1;
+}
+.imgs div{
+  float:left;
+}
+-->
 </style>
-<body class="page_home" background="https://semantic-ui.com/images/backgrounds/11.jpg">
+<body class="page_home">
   <div id="header">
-    <span class="fl">my index</span>
-    <a href="http://www.weibo.com/1747266655/profile?topnav=1&wvr=5&user=1" class="fr" target="_blank">Andy chen</a>
+    <span class="fl logo">
+      <img src="./logo.png" height="25px">
+    </span>
+    <a href="http://www.weibo.com/1747266655/profile?topnav=1&wvr=5&user=1" class="fr" target="_blank" style="line-height: 25px; color: #b3b3b3;">Andy chen</a>
   </div>
-  <div id="content" class="container">
+  <div class="container">
     <div class="list">
-      <div class="fl item">常用</div>
       <div class="fl item-list">
         <a href="http://www.youku.com/" target="_blank">优酷</a>
         <a href="http://mail.sina.com.cn/" target="_blank">邮箱</a>
@@ -170,7 +98,6 @@ div{
       </div>
     </div>
     <div class="list">
-      <div class="fl item">技术</div>
       <div class="fl item-list">
         <p>
           <a href="https://www.v2ex.com/" target="_blank">v2ex</a>
@@ -198,43 +125,19 @@ div{
       </div>
     </div>
     <div class="list">
-      <div class="fl item">奇艺果</div>
       <div class="fl item-list">
-        <a href="http://106.75.136.10:83" target="_blank">git仓库</a>
-        <a href="https://www.teambition.com" target="_blank">teambition</a>
-        <a href="http://testdiandian.artqiyi.com/views/admin/dist/#/article/production" target="_blank">测试后台</a>
-        <a href="https://note.youdao.com/group/#/62695986/(folder/176418384//full:office/176418411)?personal=false" target="_blank">接口文档</a>
-        <a href="http://www.beanstalk.cn/" target="_blank">beanstalk</a>
-        <a href="http://tongji.aldwx.com/assets" target="_blank">阿拉丁</a>
-        <a href="http://apizza.cc/" target="_blank">API</a>
-      </div>
-    </div>
-    <div class="list">
-      <div class="fl item">蜃龙游戏</div>
-      <div class="fl item-list">
-        <a href="http://www.xyjgx.cn/" target="_blank">本地开发 - 逍遥九游</a>
-        <a href="http://192.168.2.250" target="_blank">测试环境 - 内网</a>
-        <a href="http://admin.sl-xyjgx.com" target="_blank">测试环境 - 外网</a>
         <a href="http://www.layui.com" target="_blank">Layui</a>
         <a href="https://semantic-ui.com/" target="_blank">SemanticUi</a>
-        <a href="http://phantom:8089/" target="_blank">自动上线</a>
         <a href="https://shenlongyx.worktile.com/signin" target="_blank">WorkTile</a>
       </div>
     </div>
     <div class="list">
-      <div class="fl item">明师教育</div>
       <div class="fl item-list">
-        <a href="http://mail.mingshiedu.com/" target="_blank">MS_Email</a>
-        <a href="http://oa.mingshiedu.com:801/" target="_blank">公司OA</a>
-        <a href="https://worktile.com/" target="_blank">WorkTile</a>
-        <a href="http://192.168.1.228/seaslog.php" target="_blank">228_log</a>
-        <a href="http://192.168.1.228/upline/" target="_blank">上线系统</a>
-        <a href="http://gx.mingshiedu.com:802/WebService.asmx" target="_blank">明师WebService</a>
         <a href="http://www.xiaoyaoji.com.cn/" target="_blank">小幺鸡</a>
+        <a href="http://apizza.cc/" target="_blank">API</a>
       </div>
     </div>
     <div class="list">
-      <div class="fl item">在线手册</div>
       <div class="fl item-list">
         <a href="http://php.net/manual/zh/" target="_blank">php</a>
         <a href="http://www.jb51.net/shouce/jquery1.82/" target="_blank">Jquery</a>
@@ -247,13 +150,12 @@ div{
       </div>
     </div>
     <div class="list">
-      <div class="fl item">其它</div>
       <div class="fl item-list">
         <p>
           <a href="https://www.flaticon.com/" target="_blank">Icon</a>
           <a href="https://icons8.com/icon/" target="_blank">Icons8</a>
+          <a href="https://www.freepik.com/" target="_blank">Freepik</a>
           <a href="http://www.hao123.com/" target="_blank">hao123</a>
-          <a href="http://soft.hao123.com/" target="_blank">软件</a>
           <a href="http://app.yinxiang.com/" target="_blank">印象笔记</a>
           <a href="https://www.wunderlist.com/webapp#/lists/inbox" target="_blank">奇妙清单</a>
           <a href="http://linux.51yip.com/" target="_blank">Linux命令</a>
@@ -261,7 +163,7 @@ div{
         <p>
           <a href="mathematics.html" target="_blank">数学计算</a>
           <a href="https://translate.google.com/?hl=zh-CN" target="_blank">google 翻译</a>
-          <a href="http://pppboy.com/mytool" target="_blank">PHP收集</a>
+          <a href="http://pppboy.com/mytool" target="_blank" class="">PHP收集</a>
           <a href="http://blueshoes.org/en/developer/php_cheat_sheet/" target="_blank">PHP备忘单</a>
           <a href="https://www.json.cn/" target="_blank">JSON</a>
           <a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank">在线时间戳</a>
@@ -270,155 +172,29 @@ div{
       </div>
     </div>
     <div class="list">
-      <div class="fl item">自己的项目</div>
       <div class="fl item-list">
         <a href="https://www.seedvps.com/" target="_blank">Seedvps</a>
         <a href="https://www.xxoo5151.com/access/nginx.html" target="_blank">查看流量</a>
         <a href="https://www.coinpayments.net/index.php" target="_blank">虚拟币支付平台</a>
       </div>
     </div>
-    <div class="hd">
-      <br/>
-      <br/>
-      <div class="fl">
-        <div>
-          <form name="search_form" action="https://www.google.com.hk/search" target="_blank">
-            <input id="lst-ib" name="q" class="key" tabindex="1"/>
-            <input type="submit" class="sb" value="google搜索"/>
-          </form>
-        </div>
-        <div>
-          <form name="search_form" action="http://www.so.com/s" target="_blank">
-            <input id="q" name="q" class="key" tabindex="5"/>
-            <input type="submit" class="sb" value="360搜索" />
-          </form>
-        </div>
-        <div>
-          <form name="search_form" action="http://www.baidu.com/s" target="_blank">
-            <input id="word" name="word" class="key" tabindex="4"/>
-            <input type="submit" class="sb" value="百度搜索"/>
-          </form>
-        </div>
-        <div>
-          <form id="gt-form" action="https://translate.google.com/?hl=zh-CN" name="text_form" method="post" enctype="application/x-www-form-urlencoded" target="_blank">
-            <input id="source" name="text" class="key" tabindex="3"/>
-            <input type="submit" class="sb" value="google翻译"/>
-          </form>
-        </div>
-      </div>
-      <div class="fr make-box">
-        <div>
-          <div class="fr">
-            <input id="bulid-key" name="text" class="bulid-key" tabindex="2"/>
-            <input type="button" class="bulid" value="生成" onclick="javascript:bulid();"/>
-          </div>
-          <div class="fr url-type" id="type">
-            <input type="button" data-k="3" value="线上"/>
-            <input type="button" data-k="2" value="测试"/>
-            <input type="button" data-k="1" class="on" value="本地"/>
-          </div>
-        </div>
-        <div id="bulid-html">
-          <ul class="urls"> </ul>
-      </div>
-    </div>
   </div>
-  <div id="footer"> </div>
-  <script src="./js/jquery-1.8.3.min.js"></script>
-  <script src="./js/clipboard.min.js"></script>
-  <script type="text/javascript">
-     //$.getJSON('http://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8',function(json){
-     //  var img = json['images'][0]['url'];
-     //  console.log(img);
-     //  $('body').attr('background',img);
-     //})
-
-    //document.getElementById('lst-ib').focus();
-
-    $(function(){
-      $('#type input').on('click', function(){
-        $('#type input').removeClass('on');
-        $(this).addClass('on');
-      })
-    })
-
-    function bulid(){
-      var item = $.trim($('#bulid-key').val());
-      var k    = $('#type .on').data('k');
-      if(item == '' || k == '')
-        return ;
-
-      var www  = new Array('http://d.m.mingshiedu.com','http://192.168.1.228:10002','http://m.mingshiedu.com');
-      var html = 'H/special/R/index.html';
-      var api  = 'H/special/p/R/api/index';
-      var admin= 'H/special/p/R/admin/index';
-      html  = html.replace('H', www[k-1]);
-      html  = html.replace('R', item);
-      api   = api.replace('H', www[k-1]);
-      api   = api.replace('R', item);
-      admin = admin.replace('H', www[k-1]);
-      admin = admin.replace('R', item);
-      html  = '<li data-clipboard-action="copy" id="li1" data-clipboard-target="#li1">'+html+'</li>';
-      api   = '<li data-clipboard-action="copy" id="li2" data-clipboard-target="#li2">'+api+'</li>';
-      admin = '<li data-clipboard-action="copy" id="li3" data-clipboard-target="#li3">'+admin+'</li>';
-
-      $('#bulid-html .urls').html(html+api+admin);
-      live();
-    }
-
-    function live(){
-      var clipboard = new Clipboard('#bulid-html li');
-
-      clipboard.on('success', function(e) {
-        console.log(e);
-      });
-
-      clipboard.on('error', function(e) {
-        console.log(e);
-      });
-    }
-
-    getPhpError();
-    function getPhpError(){
-      var title_old = document.title;
-      var ws = new WebSocket("wss://192.168.0.104:1010");
-      ws.onopen = function(evt) {
-        console.log("Connection open ...");
-        //ws.send("MAC Hello WebSockets!");
-      };
-      ws.onmessage = function(evt) {
-        console.log( "Received Message: " + evt.data);
-        var msg = JSON.parse(evt.data);
-        _dataTreat(msg);
-        //ws.close();
-      };
-      ws.onclose = function(evt) {
-        console.log("Connection closed.");
-      };
-    }
-
-    function _dataTreat(msg){
-      var head = 1;
-      var title = '';
-      var title_old = document.title;
-      var isApple = navigator.platform.indexOf("Mac") == 0;
-      var apple = JSON.parse('{"Warning":"🌶","error":"🔥","Standards":"🍎","Notice":"🌥","unkown":"⁉️ "}');
-      Object.keys(msg).forEach(function(key){
-        if(isApple)
-          title += apple[key]+msg[key]+', ';
-        else
-          title += key+'*'+msg[key]+',';
-      })
-      console.log(title);
-      setInterval(function(){
-        if(head == 1){
-          document.title = title;
-          head = 2;
-        } else{
-          document.title = title_old;
-          head = 1;
-        }
-      }, 1000);
-    }
-  </script>
 </body>
+
+<footer>
+  <div class="imgs">
+    <div style="width:10%"><img src="./images/cactus/cactus7.png" class="fr" height"108px"></div>
+    <div style="width:10%"><img src="./images/cactus/cactus8.png" class="fr" height"108px"></div>
+    <div style="width:10%"><img src="./images/cactus/cactus9.png" class="fr" height"108px"></div>
+
+    <div style="width:10%"><img src="./images/cactus/cactus1.png" class="fr" height="128px"></div>
+    <div style="width:10%"><img src="./images/cactus/cactus2.png" class="fr" height"108px"></div>
+    <div style="width:10%"><img src="./images/cactus/cactus3.png" class="fr" height"108px"></div>
+    <div style="width:10%"><img src="./images/cactus/cactus4.png" class="fr" height"108px"></div>
+    <div style="width:10%"><img src="./images/cactus/cactus5.png" class="fr" height"108px"></div>
+    <div style="width:10%"><img src="./images/cactus/cactus6.png" class="fr" height"108px"></div>
+  </div>
+  <p>Thank <a href="https://www.freepik.com/" target="_blank">Freepik</a></p>
+</footer>
+
+
