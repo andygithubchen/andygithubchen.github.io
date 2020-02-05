@@ -36,7 +36,6 @@ a{
   border-bottom:1px solid #202124;
 }
 footer{
-	height:40px;
   width:100%;
   position:fixed;
   bottom:0px;
@@ -46,6 +45,9 @@ footer{
 }
 footer p{
 	line-height:30px;
+  position:absolute;
+  bottom:0;
+  width:100%;
 }
 .container{
   width:1000px;

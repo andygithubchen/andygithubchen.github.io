@@ -41,6 +41,15 @@ div{
 .list .item-list p{
   overflow:hidden;
 }
+.list .item-list img{
+  height:14px;
+  width:14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
 
 .list a{
   text-decoration:none;
@@ -62,24 +71,11 @@ div{
   font-weight:bold;
 }
 .imgs{
-  width:100%;
-  position:fixed;
-  bottom:0;
-  right:0;
   overflow:hidden;
-  padding:5px;
-  z-index:-1;
 }
-.imgs div{
-  float:left;
-  height: 100%;
-  display: block;
-  border: 1px solid red;
-  position: absolute;
-}
-.imgs img{
+.flower-fl{
   bottom: 0px;
-  position: fixed;
+  position: absolute;
 }
 -->
 </style>
@@ -95,10 +91,10 @@ div{
       <div class="fl item-list">
         <a href="http://www.youku.com/" target="_blank">优酷</a>
         <a href="http://mail.sina.com.cn/" target="_blank">邮箱</a>
-        <a href="http://www.weibo.com/" target="_blank">微博</a>
-        <a href="http://www.ifeng.com/" target="_blank">凤凰网</a>
-        <a href="http://www.tmall.com/" target="_blank">天猫</a>
-        <a href="http://www.google.com/" target="_blank">google</a>
+        <a href="http://www.weibo.com/" target="_blank"><img src="http://www.weibo.com/favicon.ico">微博</a>
+        <a href="http://www.ifeng.com/" target="_blank"><img src="http://www.ifeng.com/favicon.ico">凤凰网</a>
+        <a href="http://www.tmall.com/" target="_blank"><img src="http://www.tmall.com/favicon.ico">天猫</a>
+        <a href="http://www.google.com/" target="_blank"><img src="https://www.google.com/favicon.ico">google</a>
         <a href="http://www.youtube.com/" target="_blank">youtube</a>
         <a href="http://www.facebook.com/" target="_blank">facebook</a>
         <a href="http://www.twitter.com/" target="_blank">twitter</a>
@@ -192,16 +188,14 @@ div{
 
 <footer>
   <div class="imgs">
-    <div style="width:10%"><img src="./images/cactus/cactus7.png" class="fr" height"108px"></div>
-    <div style="width:10%"><img src="./images/cactus/cactus8.png" class="fr" height"108px"></div>
-    <div style="width:10%"><img src="./images/cactus/cactus9.png" class="fr" height"108px"></div>
+    <div class="fl flower-fl">
+      <img src="./images/cactus/cactus9.png">
+    </div>
 
-    <div style="width:10%"><img src="./images/cactus/cactus1.png" class="fr" height="128px"></div>
-    <div style="width:10%"><img src="./images/cactus/cactus2.png" class="fr" height"108px"></div>
-    <div style="width:10%"><img src="./images/cactus/cactus3.png" class="fr" height"108px"></div>
-    <div style="width:10%"><img src="./images/cactus/cactus4.png" class="fr" height"108px"></div>
-    <div style="width:10%"><img src="./images/cactus/cactus5.png" class="fr" height"108px"></div>
-    <div style="width:10%"><img src="./images/cactus/cactus6.png" class="fr" height"108px"></div>
+    <div class="fr">
+      <img src="./images/cactus/cactus5.png">
+      <img src="./images/cactus/cactus3.png" style="margin-right:-15px;">
+    </div>
   </div>
   <p>Thank <a href="https://www.freepik.com/" target="_blank">Freepik</a></p>
 </footer>
